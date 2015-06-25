@@ -44,7 +44,7 @@ function reset() {
 $("#submit").click(function () {
 	currentGuess = $("#guess").val();
 	// currentGuess = Number($("#guess").val());
-	if ($.isNumeric(currentGuess)) {
+	if ($.isNumeric(currentGuess) &&) {
 		alert("that is a number");
 		if (newGuess(Number(currentGuess))) {
 			alert('thats a new guess!');
@@ -87,3 +87,4 @@ $("#reset").click(function (){
 // User clicks hint
 	// tell user the number is between -5 & +5 of the answer
 	// Count it as a guess?
+
