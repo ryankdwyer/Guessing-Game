@@ -66,9 +66,7 @@ $("#submit").click(function () {
 		// Change class of div to 'seleceted'
 			// This will show the number on the number line of guesses
 		// Test whether this value is correct
-		} 
-			
-				
+		} 	
 	} else {
 		$("#feedback").text("That is not a number!");
 		$("#guess").val('');
