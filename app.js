@@ -14,21 +14,21 @@ var currentGuess;
 
 
 // Validate the input is a number and between 1-100
-function isNumber(currentGuess) {
-	if (typeof currentGuess === 'number') {
-		return true;
-	} else {
-		alert("That entry is not a number. Please enter a number between 1 and 100.")
-		return false;
-	}
-}
+// function isNumber(currentGuess) {
+// 	if (typeof currentGuess === 'number') {
+// 		return true;
+// 	} else {
+// 		alert("That entry is not a number. Please enter a number between 1 and 100.")
+// 		return false;
+// 	}
+// }
 // Validate the input is not a repeat
-function newGuess(currentGuess) {
-	if (currentGuess in guesses) {
+function newGuess(inputGuess) {
+	if ($.inArray(inputGuess, guesses) === -1) {
+		return true;		
+	} else {
 		alert("It looks like you already guessed that number.")
 		$("#guess").val('');
-	} else {
-		return true;
 	}
 }
 
@@ -42,26 +42,36 @@ function reset() {
 
 // User enters guess in input and clicks submit
 $("#submit").click(function () {
-	currentGuess = Number($("#guess").val());
-	if (isNumber(currentGuess) && newGuess(currentGuess)) {
+	currentGuess = $("#guess").val();
+	// currentGuess = Number($("#guess").val());
+	if ($.isNumeric(currentGuess)) {
+		alert("that is a number");
+		if (newGuess(Number(currentGuess))) {
+			alert('thats a new guess!');
+			if (Number(currentGuess) === answer) {
+			// If correct
+			$("#feedback").text("yay you win!");
+			} else {
+				// append to guesses
+				guesses.push(Number(currentGuess));
+				// check if it exceeds limit
+				if (numGuesses >= guessLimit) {
+					reset();
+				} else {
+					// tell user if they are hot or cold by updating a <p> - tell
+					// tell the user if they need to guess higher or lower
+				}
+			}
 		// Add guess to the number line
 		// Change class of div to 'seleceted'
 			// This will show the number on the number line of guesses
 		// Test whether this value is correct
-		if (currentGuess === answer) {
-			// If correct
-			$("#feedback").text("yay you win!");
-		} else {
-			// append to guesses
-			guesses.push(currentGuess);
-			if (numGuesses >= guessLimit) {
-				reset();
-			}
-
-		}
-			// check if it exceeds limit
-			// tell user if they are hot or cold by updating a <p> - tell
-			// tell the user if they need to guess higher or lower	
+		} 
+			
+				
+	} else {
+		$("#feedback").text("That is not a number!");
+		$("#guess").val('');
 	}
 });
 
