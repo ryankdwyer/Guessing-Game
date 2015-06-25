@@ -65,7 +65,22 @@ body {
 #control:hover {
 	color: #287ACC;
 }
+#reset {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 4px;
+	font-family: Arial;
+	color: #3399FF;
+	background: #FFFFFF;
+	padding: 7px 15px 7px 15px;
+	border: solid #3399FF 1px;
+	text-decoration: none;
+	font-size: 15px;
+}
 
+#reset:hover {
+	color: #287ACC;
+}
 #guess {
 	border-radius: 4px;
 	font-family: Arial;
