@@ -19,10 +19,10 @@ $("#guess").focus();
 var $ul = $('<ul id="Container"></ul>');
 var $ul2 = $('<ul id="Container"></ul>');
 for (var i=1; i < 51; i++) {
-	$ul.append($('<li id=' + i + ' class="numString">' + i + '</li>'));
+	$ul.append($('<li id=' + i + ' class="numString">' + i + '</li>').css("visibility", "hidden"));
 };
 for (var i=51; i < 101; i++) {
-	$ul2.append($('<li id=' + i + ' class="numString">' + i + '</li>'));
+	$ul2.append($('<li id=' + i + ' class="numString">' + i + '</li>').css("visibility", "hidden"));
 };
 $("#input").append($ul);
 $("#input").append($ul2);
@@ -46,6 +46,9 @@ function reset() {
 	$("#guess").val('');
 	$("#guess").focus();
 	$("#feedback").text("Guess a number from 1 to 100");
+	for (var i=1; i < 101; i++) {
+		$("#"+i).css("visibility", "hidden");
+	};
 }
 
 // Creates response decisions
@@ -85,12 +88,14 @@ $("#submit").click(function () {
 		if (Number(currentGuess) === answer) {
 		// If correct
 		$("#feedback").text("yay you win!");
+		// Animate li of the answer
 		} else {
 			// append to guesses
 			guesses.push(Number(currentGuess));
 			// update numGuesses
 			numGuesses = guesses.length;
 			$("#guessesLeft").text("You have " + (guessLimit - numGuesses) + " guesses left.");
+			$("#"+currentGuess).css("visibility", "visible");
 			// check if it exceeds limit
 			if (numGuesses >= guessLimit) {
 				alert("Sorry, you are out of guesses.");
@@ -104,8 +109,10 @@ $("#submit").click(function () {
 			// This will show the number on the number line of guesses
 		// Test whether this value is correct
 	} else {
-		$("#feedback").text("That is not a number!");
-		$("#guess").val('');
+		if (!$.isNumeric(currentGuess)) {
+			$("#feedback").text("That is not a number!");
+			$("#guess").val('');
+		}
 	}
 });
 

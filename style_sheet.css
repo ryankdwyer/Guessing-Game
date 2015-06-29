@@ -16,11 +16,15 @@ ul {
 ul li {
 	display: inline;
 	display: table-cell;
-	
+	margin: 2px;
 	padding: 2px;
 	text-align: center;
 	font-size: smaller;
+	color: white;
 	padding-left: 0;
+	visibility: hidden;
+	background-color: #3399FF;
+	border-radius: 50px;
 }
 
 .site-wrapper {
