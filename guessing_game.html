@@ -2,19 +2,16 @@
 <html>
 <head>
 	<title>Guessing Game</title>
-	<link rel="stylesheet" type="text/css" href="style_sheet.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<div class="site-wrapper">
-		<div id="site-title">
-			<p>Welcome to the Pick-a-Number Game!</p>
-		</div>
+		<p id="site-title">Welcome to the Pick-a-Number Game!</p>
 		<div id="input">
 			<div id="input-wrapper">
 				<input type="number" id="guess">
 			</div>
 			<div id="submit-button-wrapper">
-				<button type="button" id="submit">SUBMIT</button>
+				<button type="button" class="button" id='submit'>SUBMIT</button>
 			</div>
 			<div id="feedback">
 				Guess a number from 1 to 100
@@ -22,12 +19,11 @@
 			<div id="guessesLeft"></div>
 		</div>
 		<div id="control-buttons-wrapper">
-			<button type="button" id="hint">HINT</button>
-			<button type="button" id="reset">RESET</button>
+			<button type="button" class="button" id='hint'>HINT</button>
+			<button type="button" class="button" id='reset'>RESET</button>
 		</div>
-		
-	</div>
+
 </body>
 <script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="app_v2.js" type="text/javascript" charset="utf-8"></script>
+<script src="app_v2.js" type="text/javascript" charset="utf-8"></script>
 </html>
