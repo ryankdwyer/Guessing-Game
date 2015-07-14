@@ -94,7 +94,7 @@ $(document).ready(function () {
 
             if (currentGuess === answer) {
                 // If correct
-                $("#feedback").text("yay you win!");
+                $("#feedback").text("Yay, you win! Please click RESET below.");
                 // Animate li of the answer
                 $("#" + currentGuess).css("visibility", "visible").fadeOut(300).fadeIn(300);
             } else {
