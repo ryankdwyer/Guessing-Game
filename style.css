@@ -1,0 +1,96 @@
+/* Formats the body */
+body {
+	text-align: center;
+	margin-top: 0;
+	padding-top: 0;
+	display: table;
+	width: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+}
+/* Formats the list that holds the guesses */
+ul {
+	list-style-type: none;
+	text-align: center;
+	width: 100%;
+	display: table;
+	table-layout: fixed;
+	padding-left: 0;
+}
+
+ul li {
+	display: inline;
+	display: table-cell;
+	margin: 2px;
+	padding: 2px;
+	text-align: center;
+	font-size: smaller;
+	color: white;
+	padding-left: 0;
+	visibility: hidden;
+	background-color: #3399FF;
+	border-radius: 50px;
+}
+ /* Formats message in the top banner */
+#site-title {
+	width: 100%;
+	height: 90px;
+	line-height: 90px;
+	background-color: #3399FF;
+	font-size: xx-large;
+	color: #FFFFFF;
+}
+
+/* Formats all buttons on the page */
+.button {
+	border-radius: 4px;
+	font-family: Arial;
+	color: #3399FF;
+	background: #FFFFFF;
+	padding: 7px 15px 7px 15px;
+	border: solid #3399FF 1px;
+	text-decoration: none;
+	font-size: 15px;
+}
+
+.button:hover {
+	color: #287ACC;
+}
+
+/* Formats the input div and the input box */
+#input {
+	width: 100%;
+	height: 300px;
+	padding: 12px 0px 12px 0px;
+}
+
+#input-wrapper {
+	padding-top: 5px;
+}
+
+#guess {
+	border-radius: 4px;
+	font-family: Arial;
+	border: solid #c1e0ff 1px;
+	font-size: 45px;
+	text-align: center;
+	width: 150px;
+}
+
+/* Formats the dynamic feedback when user clicks submit */
+#feedback {
+	font-size: 35px;
+	padding: 0px 0px 25px 0px;
+}
+
+/* Formats the div that holds the hint and reset buttons */
+#control-buttons-wrapper {
+	width: 100%;
+	height: 90px;
+	line-height: 90px;
+	background-color: #3399FF;
+}
+
+#submit-button-wrapper {
+	padding: 25px 0px 25px 0px;
+}
+
